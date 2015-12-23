@@ -7,4 +7,5 @@
 **Tokenizers**
 - NLTK `casual` tokenizer (`TweetTokenizer`)
 - NLTK `word_tokenize` (defaults to `TreebankWordTokenizer`)
-- Christopher Potts Sentiment-Aware Tokenizer (`HappyFunTokenizer`)
+- Christopher Potts [Sentiment-Aware Tokenizer] (http://sentiment.christopherpotts.net/tokenizing.html#sentiment) (`HappyFunTokenizer`)
+  - updated to work with python 3

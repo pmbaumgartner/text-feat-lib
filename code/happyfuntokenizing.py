@@ -173,7 +173,7 @@ class HappyFunTokenizer:
 
         # Possible alter the case, but avoid changing emoticons like :D into :d:
         if not self.preserve_case:
-            words = [x if emoticon_re.search(x) else x if x[-4:] == "_NEG" else x.lower() for x in words]
+            words = [x if emoticon_re.search(x) else x[:-4].lower() + "_NEG" if x[-4:] == "_NEG" else x.lower() for x in words]
         return words
 
     def __html2unicode(self, s):
