@@ -41,7 +41,7 @@ English-language tweet.
 Updates (Dec 2015):
 - Works with Python 3
 - Added negation parsing (approach: http://sentiment.christopherpotts.net/lingstruc.html#approach, implementation: http://stackoverflow.com/a/23384994)
-- Removed random tokenize_random_tweet() method
+- Removed tokenize_random_tweet() method
 """
 
 __author__ = "Christopher Potts"
