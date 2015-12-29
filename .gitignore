@@ -1,2 +1,8 @@
 # get 'em outta here
 .ipynb_checkpoints
+
+# don't provide the data, link to it
+data/
+
+# don't provide lexicons, link to them
+lexicons/
