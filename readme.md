@@ -1,24 +1,33 @@
 Text Features Library
 ------
 
-**Objective**: Provide a comprehensive list of tokenizers, features, and general NLP things used for text analysis, with an initial focus on features used for twitter data and sentiment analysis.
+**Objective**: Provide a comprehensive list of tokenizers, features, and general NLP things used for text analysis with examples. The initial focus on features used for twitter data and sentiment analysis.
 
 **Packages Used**: `nltk`, `spacy`, `pandas`, `scikit-learn`
 
 Notebooks
 ------
-### Features
-1. Traditional BOW
-- Character n-grams
-- Exclamations
-- ALL CAPS
-- Bible Verses
-- Sentiment
-- Named Entities
-- POS BOW
-- @mentions
-- #hashtags
-- #hashtag word split (\#WhyImNotVotingForHillary > Why Im Not Voting For Hillary) BOW/n-gram
+### Features  
+(roughly in order ofincreasing complexity)
+1. [Count of ALL CAPS words](notebooks/ALL CAPS.ipynb)
+- [Count of Bible Verses](notebooks/Bible Verses.ipynb)
+- [Word n-grams (Bag of Words)](notebooks/Word n-grams - Bag Of Words - BOW.ipynb)
+- [Character n-grams](notebooks/Character n-grams.ipynb)
+- [Hashtag Counts](notebooks/Hashtag Counts - Bag of Hashtags.ipynb)
+- [Hashtag Bag of Words](notebooks/Hashtag BOW.ipynb)
+- [Named Entity Counts](notebooks/Named Entities Count - Bag of Named Entities.ipynb)
+- [Brown Word Cluster assignments](notebooks/TweetNLP - Brown Word Clusters.ipynb)
+- [Bing Liu Lexicon Derived Features](notebooks/Bing Liu Lexicon Features.ipynb)
+- [NRC Hashtag Sentiments (unigrams)](notebooks/Bing Liu Lexicon Features.ipynb)
+- [NRC Hashtag Sentiments (bigrams)](notebooks/NRC Hashtag Sentiments - bigrams.ipynb)
+- [NRC Emotion Lexicon Features](notebooks/NRC Emotion Lexicon Features.ipynb)
+
+#### Notes on Features
+- Each feature is demonstrated on the STS-Gold dataset (see *Datasets* below).
+- Each feature is evaluated on `accuracy` using 5-fold cross validation with `MultinomialNB (Multinomial Naive Bayes)`, `BernoulliNB (Bernoulli Naive Bayes)`, and `SVC (Support Vector Classifier)` in comparison to selecting the most frequent class (`DummyClassifier`)
+  - these are the most commonly used models I see for text classification tasks
+- The lexicons used for some advanced features have links within the notebook as well as in the *Lexicons* table below.
+  - *They are not hosted in this repository to respect the wishes and licenses of their creators.*
 
 ### Tokenizers
 - NLTK's `casual` tokenizer (`TweetTokenizer`)

@@ -1,8 +1,11 @@
 # get 'em outta here
 .ipynb_checkpoints
 
-# don't provide the data, link to it
+# don't provide the data, link to them
 data/
 
 # don't provide lexicons, link to them
 lexicons/
+
+# incomplete notebooks
+*INCOMPLETE*
