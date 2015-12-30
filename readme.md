@@ -1,7 +1,7 @@
 Text Features Library
 ------
 
-**Objective**: Provide a comprehensive list of tokenizers, features, and general NLTK things used for text analysis, with an initial focus on features used for twitter data.
+**Objective**: Provide a comprehensive list of tokenizers, features, and general NLP things used for text analysis, with an initial focus on features used for twitter data and sentiment analysis.
 
 **Packages Used**: `nltk`, `spacy`, `pandas`, `scikit-learn`
 
