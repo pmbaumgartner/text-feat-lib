@@ -1,12 +1,12 @@
 Text Features Library
-======
+------
 
 **Objective**: Provide a comprehensive list of tokenizers, features, and general NLP things used for text analysis with examples. The initial focus on features used for twitter data and sentiment analysis.
 
 **Packages Used**: `nltk`, `spacy`, `pandas`, `scikit-learn`
 
 Notebooks
-======
+------
 ### Features  
 (roughly in order of increasing complexity)
 
@@ -49,7 +49,7 @@ Notebooks
   - Additional POS tagging features available on website
 
 Datasets
-======
+------
 ### Sentiment Classification
 *Source: [Evaluation datasets for Twitter sentiment analysis: a survey and a new dataset, the STS-Gold](http://oro.open.ac.uk/40660/1/paper1.pdf)*
 
@@ -78,7 +78,7 @@ Datasets
 | Sentiment140 Lexicon | Lexicon generated from the Sentiment140 dataset | [Sentiment140 Lexicon](http://saifmohammad.com/WebPages/lexicons.html#EmoLex5)
 
 Literature / Papers
-======
+------
   - [NRC-Canada: Building the State-of-the-Art in Sentiment Analysis of Tweets](http://www.aclweb.org/anthology/S13-2053)
     - Winners of the SemEval 2013/2014 Twitter Sentiment Analysis tasks describe their methodology
   - [NRC-Canada-2014: Recent Improvements in the Sentiment Analysis of Tweets](http://www.saifmohammad.com/WebDocs/SemEval2014-Task9.pdf)
