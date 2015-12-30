@@ -8,7 +8,8 @@ Text Features Library
 Notebooks
 ------
 ### Features  
-(roughly in order ofincreasing complexity)
+(roughly in order of increasing complexity)
+
 1. [Count of ALL CAPS words](notebooks/ALL CAPS.ipynb)
 - [Count of Bible Verses](notebooks/Bible Verses.ipynb)
 - [Word n-grams (Bag of Words)](notebooks/Word n-grams - Bag Of Words - BOW.ipynb)
