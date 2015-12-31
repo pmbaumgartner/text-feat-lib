@@ -17,12 +17,17 @@ Notebooks
 - [Hashtag Counts](notebooks/Hashtag Counts - Bag of Hashtags.ipynb)
 - [Hashtag Bag of Words](notebooks/Hashtag BOW.ipynb)
 - [Named Entity Counts](notebooks/Named Entities Count - Bag of Named Entities.ipynb)
+- [Word n-grams - BOW -  Sequence Split in Half](notebooks/Word n-grams - BOW -  Sequence Split in Half.ipynb) ☨
 - [Brown Word Cluster assignments](notebooks/TweetNLP - Brown Word Clusters.ipynb)
 - [Bing Liu Lexicon Derived Features](notebooks/Bing Liu Lexicon Features.ipynb)
 - [NRC Hashtag Sentiments (unigrams)](notebooks/Bing Liu Lexicon Features.ipynb)
 - [NRC Hashtag Sentiments (bigrams)](notebooks/NRC Hashtag Sentiments - bigrams.ipynb)
 - [NRC Emotion Lexicon Features](notebooks/NRC Emotion Lexicon Features.ipynb)
+- [MaxDiff Twitter Sentiment Lexicon - unigrams and bigrams](notebooks/MaxDiff Twitter Sentiment Lexicon - unigrams and bigrams.ipynb) ☨
+- [Sentiment 140 - unigrams](notebooks/Sentiment140 - unigrams.ipynb) ☨
+- [Sentiment 140 - bigrams](notebooks/Sentiment140 - bigrams.ipynb) ☨
 
+☨ - most recently updated
 #### Notes on Features
 - Each feature is demonstrated on the STS-Gold dataset (see *Datasets* below).
 - Each feature is evaluated on `accuracy` using 5-fold cross validation with `MultinomialNB (Multinomial Naive Bayes)`, `BernoulliNB (Bernoulli Naive Bayes)`, and `SVC (Support Vector Classifier)` in comparison to selecting the most frequent class (`DummyClassifier`)
@@ -57,7 +62,7 @@ Datasets
 |----	|---	|----	|---- |
 | [Stanford Twitter Sentiment Test Set](http://help.sentiment140.com/for-students) (STS-Test/Sentiment140)   	| The Stanford Twitter sentiment corpus, introduced by Go et al. consists of two different sets, training and test. The training set contains 1.6 million tweets automatically labelled as positive or negative based on emotions. For example, a tweet is labelled as positive if it contains :), :-), : ), :D, or =) and is labelled as negative if it contains :(, :-(, or : (. The test set (STS-Test), on the other hand, is manually annotated and contains 177 negative, 182 positive and 139 neutrals tweets. 	| [download link](http://help.sentiment140.com/for-students)   	| (0 = negative, 2 = neutral, 4 = positive) |
 |[Sanders-Twitter](http://www.sananalytics.com/lab/twitter-sentiment/)    	| This free data set is for training and testing sentiment analysis algorithms. It consists of 5,513 hand-classified tweets. Each tweet was classified with respect to one of four different topics. **Download script was not fully functioning as of Dec 28, 2015. Do some creative googling to find a fuller dataset.**  	| [download script](https://github.com/acquayefrank/sanders-twitter)    	| None |
-| [Sentiment Strength Twitter Dataset](http://sentistrength.wlv.ac.uk/) (SS-Tweet)   	| This dataset consists of 4,242 tweets manually labelled with their positive and negative sentiment strengths. i.e., a negative strength is a number between -1 (not negative) and -5 (extremely negative). Similarly, a positive strength is a number between 1 (not positive) and 5 (extremely positive). The dataset was constructed by ([source](http://onlinelibrary.wiley.com/doi/10.1002/asi.21416/abstract)) to evaluate [SentiStrenth](http://sentistrength.wlv.ac.uk/), a lexicon-based method for sentiment strength detection.  	| [download link](http://sentistrength.wlv.ac.uk/documentation/6humanCodedDataSets.zip)   	| *Positive* if `positive sentiment strength / negative > 1.5`, and *negative* otherwise. *Neutral* if `abs(positive / strength) = 1`
+| [Sentiment Strength Twitter Dataset](http://sentistrength.wlv.ac.uk/) (SS-Tweet)   	| This dataset consists of 4,242 tweets manually labelled with their positive and negative sentiment strengths. i.e., a negative strength is a number between -1 (not negative) and -5 (extremely negative). Similarly, a positive strength is a number between 1 (not positive) and 5 (extremely positive). The dataset was constructed by ([source](http://onlinelibrary.wiley.com/doi/10.1002/asi.21416/abstract)) to evaluate [SentiStrenth](http://sentistrength.wlv.ac.uk/), a lexicon-based method for sentiment strength detection.  	| [download link](http://sentistrength.wlv.ac.uk/documentation/6humanCodedDataSets.zip)   	| *Positive* if `positive sentiment strength / negative > 1.5`, and *negative* otherwise. *Neutral* if `abs(positive / negative) = 1`
 | [Health Care Reform](http://help.sentiment140.com/for-students) (HCR)   	| The Health Care Reform (HCR) dataset was built by crawling tweets containing the hashtag “#hcr” (health care reform) in March 2010. A subset of this corpus was manually annotated by the authors with 5 labels (positive, negative, neutral, irrelevant, unsure(other)) and split into training (839 tweets), development (838 tweets) and test (839 tweets) sets. 	| [download link](https://bitbucket.org/speriosu/updown/src/1deb8fe45f603a61d723cc9b987ae4f36cbe6b16/data/hcr/?at=default)   	| None |
 | [Obama-McCain Debate](http://dl.acm.org/citation.cfm?doid=1753326.1753504) (OMD)   	| The Obama-McCain Debate (OMD) dataset was constructed from 3,238 tweets crawled during the first U.S. presidential TV debate in September 2008. Sentiment labels were acquired for these tweets using Amazon Mechanical Turk, where each tweet was rated by at least three annotators as either positive, negative, mixed, or other. 	| [download link](https://bitbucket.org/speriosu/updown/src/1deb8fe45f60/data/shamma/orig/debate08_sentiment_tweets.tsv?at=default&fileviewer=file-view-default)   	| Labels which two-third of the voters agree on are final labels of the tweets |
 | [STS-Gold](http://oro.open.ac.uk/40660/1/paper1.pdf)   	|  The STSGold dataset contains 13 negative, 27 positive and 18 neutral entities as well as 1,402 negative, 632 positive and 77 neutral tweets. ([details in Section 3](http://oro.open.ac.uk/40660/1/paper1.pdf)) 	| [download link](http://tweenator.com/index.php?page_id=13)   	| 0=negative, 4=positive |
@@ -69,13 +74,21 @@ Datasets
 *Lexicons are typically used for feature creation for sentiment classification tasks.*
 *Source: [NRC-Canada: Building the State-of-the-Art in Sentiment Analysis of Tweets](http://www.aclweb.org/anthology/S13-2053)*
 
-| Lexicon | Description | Download Link |
-|--- |--- |--- |
-| NRC Emotion Lexicon | Both Word-Emotion and Word-Sentiment Association Lexicon | [NRC Word-Emotion Association Lexicon](http://saifmohammad.com/WebPages/lexicons.html#EmoLex)
-|MPQA Lexicon | The Subjectivity Lexicon (list of subjectivity clues) that is part of OpinionFinder is also available for separate download. These clues were compiled from several sources (see the enclosed README). | [Subjectivity Lexicon](http://mpqa.cs.pitt.edu/lexicons/subj_lexicon/)|
-| Bing Liu Sentiment Lexicon | A list of positive and negative opinion words or sentiment words for English (around 6800 words). This list was compiled over many years starting from our first paper (Hu and Liu, KDD-2004). | [Opinion Lexicon](https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html#lexicon) |
-| NRC Hashtag Sentiment Lexicon | These lexicons were used to generate winning submissions for the sentiment analysis shared tasks of SemEval-2013 Task 2 and SemEval-2014 Task 9. | [NRC Hashtag Sentiment Lexicon](http://saifmohammad.com/WebPages/lexicons.html#EmoLex5)
-| Sentiment140 Lexicon | Lexicon generated from the Sentiment140 dataset | [Sentiment140 Lexicon](http://saifmohammad.com/WebPages/lexicons.html#EmoLex5)
+| Lexicon | Description | Download Link | Features Created |
+|--- |--- |--- |:---: |
+| NRC Emotion Lexicon | Both Word-Emotion and Word-Sentiment Association Lexicon | [NRC Word-Emotion Association Lexicon](http://saifmohammad.com/WebPages/lexicons.html#EmoLex) | ✔ |
+| MPQA Subjectivity Lexicon | The Subjectivity Lexicon (list of subjectivity clues) that is part of OpinionFinder is also available for separate download. These clues were compiled from several sources (see the enclosed README). | [Subjectivity Lexicon](http://mpqa.cs.pitt.edu/lexicons/subj_lexicon/)| - |
+| Bing Liu Sentiment Lexicon | A list of positive and negative opinion words or sentiment words for English (around 6800 words). This list was compiled over many years starting from our first paper (Hu and Liu, KDD-2004). | [Opinion Lexicon](https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html#lexicon) | ✔ |
+| NRC Hashtag Sentiment Lexicon | These lexicons were used to generate winning submissions for the sentiment analysis shared tasks of SemEval-2013 Task 2 and SemEval-2014 Task 9. | [NRC Hashtag Sentiment Lexicon](http://saifmohammad.com/WebPages/lexicons.html#EmoLex5) | ✔ |
+| Sentiment140 Lexicon | Lexicon generated from the Sentiment140 dataset | [Sentiment140 Lexicon](http://saifmohammad.com/WebPages/lexicons.html#EmoLex5) | ✔ |
+| MPQA Effect Lexicon | Lexicon indicating whether a `wordnet synset` has a positive, negative, or no effect on entities | [+/- Effect Lexicon](http://mpqa.cs.pitt.edu/lexicons/effect_lexicon/) | ~ |
+| MaxDiff Twitter Sentiment Lexicon | The lexicon provides real-valued scores for the strength of association of terms with positive sentiment. The sentiment annoations were done manually through Mechanical Turk using the MaxDiff method of annotation. | [Max Diff Twitter Sentiment Lexicon](http://saifmohammad.com/WebPages/lexicons.html#EmoLex4) | ✔ |
+| AFINN | AFINN is a list of English words rated for valence with an integer between minus five (negative) and plus five (positive). The words have been manually labeled by Finn Årup Nielsen in 2009-2011. | [AFINN Python Implementation](https://github.com/fnielsen/afinn) | - |
+| SentiWordNet | SentiWordNet is a lexical resource for opinion mining. SentiWordNet assigns to each synset of WordNet three sentiment scores: positivity, negativity, objectivity. | [SentiWordNet](http://sentiwordnet.isti.cnr.it/) | - |
+
+
+
+
 
 Literature / Papers
 ------
